@@ -13,13 +13,10 @@ describe('Collection', function() {
   })
 
   it('should start with a data set', function() {
-    expect(testCollection.dataSet.length).toEqual(3)
+    expect(testCollection.dataSet).toHaveLength(3)
   })
 
   it('should be able to get cards for dataSet', function() {
-    const expected = [
-      {name: "John Smith", points: 10}
-    ]
-    expect(testCollection.getCards(1)).toEqual(expected)
+    expect(testCollection.getCards(1)).toHaveLength(1)
   })
 })

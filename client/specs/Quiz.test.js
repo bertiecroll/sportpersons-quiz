@@ -30,18 +30,18 @@ describe('Quiz', function() {
   })
 
   it('should start with no cards on show', function() {
-    expect(testQuiz.cardsOnShow.length).toEqual(0)
+    expect(testQuiz.cardsOnShow).toHaveLength(0)
   })
 
   it('should be able to show cards for round 1', function() {
     testQuiz.displayCards()
-    expect(testQuiz.cardsOnShow.length).toEqual(2)
+    expect(testQuiz.cardsOnShow).toHaveLength(2)
   })
 
   it('should increase amount of cards on show by one each round', function() {
     testQuiz.round = 2
     testQuiz.displayCards()
-    expect(testQuiz.cardsOnShow.length).toEqual(3)
+    expect(testQuiz.cardsOnShow).toHaveLength(3)
   })
 
 })
