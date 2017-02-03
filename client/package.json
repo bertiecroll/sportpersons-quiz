@@ -4,6 +4,7 @@
   "description": "",
   "main": "index.js",
   "scripts": {
+    "start": "webpack -w",
     "test": "jest /specs"
   },
   "author": "",
