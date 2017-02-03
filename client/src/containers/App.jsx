@@ -38,6 +38,7 @@ class App extends React.Component {
       user: {name: "Player 1"},
       compareBy: 'points'
     })
+    quiz.showCards()
     this.setState({
       quiz: quiz
     })
