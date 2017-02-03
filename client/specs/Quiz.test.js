@@ -1,6 +1,7 @@
 import Quiz from '../src/quiz_logic/Quiz'
 import Collection from '../src/quiz_logic/Collection'
 import WinChecker from '../src/quiz_logic/WinChecker'
+import Tracker from '../src/quiz_logic/Tracker'
 
 describe('Quiz', function() {
 
@@ -15,11 +16,13 @@ describe('Quiz', function() {
       ]
     )
     const winChecker = new WinChecker()
+    const tracker = new Tracker({totalRounds: 4})
     const sampleUser = {name: "Player 1"}
     testQuiz = new Quiz(
         {
           collection: collection,
           winChecker: winChecker,
+          tracker: tracker,
           user: sampleUser,
           compareBy: 'points'
         })
@@ -33,23 +36,13 @@ describe('Quiz', function() {
     expect(testQuiz.user).toBeDefined()
   })
 
-  it('should start at round one', function() {
-    expect(testQuiz.round).toEqual(1)
-  })
-
   it('should start with no cards on show', function() {
     expect(testQuiz.cardsOnShow).toHaveLength(0)
   })
 
-  it('should be able to show cards for round 1', function() {
+  it('should be able to show cards', function() {
     testQuiz.showCards()
     expect(testQuiz.cardsOnShow).toHaveLength(2)
-  })
-
-  it('should increase amount of cards on show by one each round', function() {
-    testQuiz.round = 2
-    testQuiz.showCards()
-    expect(testQuiz.cardsOnShow).toHaveLength(3)
   })
 
   it('should be able to clear cards on show', function() {
@@ -58,15 +51,13 @@ describe('Quiz', function() {
     expect(testQuiz.cardsOnShow).toHaveLength(0)
   })
 
-  it('should start with an empty scoreCard', function() {
-    expect(testQuiz.scoreCard).toHaveLength(0)
-  })
-
   it('should be able to play round', function() {
     testQuiz.showCards()
     const guessIndex = 0
     testQuiz.playRound(guessIndex)
-    expect(testQuiz.scoreCard).toHaveLength(1)
+    expect(testQuiz.tracker.scoreCard).toHaveLength(1)
+    expect(testQuiz.tracker.currentRound).toEqual(2)
+    expect(testQuiz.cardsOnShow).toHaveLength(0)
   })
 
 })
