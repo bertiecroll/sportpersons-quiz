@@ -1,6 +1,7 @@
 class Quiz {
-  constructor({dataSet}) {
-    this.dataSet = dataSet 
+  constructor({dataSet, user}) {
+    this.dataSet = dataSet
+    this.user = user 
   }
 }
 
