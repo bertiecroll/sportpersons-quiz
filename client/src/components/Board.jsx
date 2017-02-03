@@ -1,4 +1,5 @@
 import React from 'react'
+import Display from './Display'
 
 class Board extends React.Component {
   constructor(props) {
@@ -7,7 +8,9 @@ class Board extends React.Component {
 
   render() {
     return (
-      <div className="quiz">Quiz</div>
+      <div className="quiz-board">
+        <Display cardsOnShow={props.quiz.cardsOnShow}/>
+      </div>
     )
   }
 
