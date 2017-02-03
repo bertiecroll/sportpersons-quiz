@@ -1,6 +1,6 @@
 class Quiz {
-  constructor({dataSet, user}) {
-    this.dataSet = dataSet
+  constructor({collection, user}) {
+    this.collection = collection
     this.user = user
     this.round = 1 
     this.cardsOnShow = []
@@ -8,7 +8,7 @@ class Quiz {
 
   displayCards() {
     const numberOfCards = this.round + 1
-    this.cardsOnShow = this.dataSet.slice(0, numberOfCards)
+    this.cardsOnShow = this.collection.getCards(numberOfCards)
   }
 
 }
