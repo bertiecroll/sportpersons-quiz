@@ -1,4 +1,5 @@
 import React from 'react'
+import Board from '../components/Board'
 import Quiz from '../quiz_logic/Quiz'
 import Collection from '../quiz_logic/Collection'
 import Tracker from '../quiz_logic/Tracker'
@@ -22,12 +23,9 @@ class App extends React.Component {
   }
 
   render() {
-    console.log(this.state.quiz)
-    return (
-      <div className="app-container">
-        Sportpersons Quiz
-      </div>
-    )
+    return (this.state.quiz) ?
+      <Board quiz={this.state.quiz} /> :
+      <div className="app-container">Loading...</div> 
   }
 
   apiResponseAction(event) {
