@@ -1,4 +1,4 @@
-import Collection from '../src/quiz_logic/Collection'
+import Collection from '../../src/quiz_logic/Collection'
 
 describe('Collection', function() {
   let testCollection

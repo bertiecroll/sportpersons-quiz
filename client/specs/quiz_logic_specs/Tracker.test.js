@@ -1,4 +1,4 @@
-import Tracker from '../src/quiz_logic/Tracker'
+import Tracker from '../../src/quiz_logic/Tracker'
 
 describe('Tracker', function() {
   let testTracker

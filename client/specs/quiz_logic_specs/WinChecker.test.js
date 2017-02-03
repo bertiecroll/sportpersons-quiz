@@ -1,4 +1,4 @@
-import WinChecker from '../src/quiz_logic/WinChecker'
+import WinChecker from '../../src/quiz_logic/WinChecker'
 
 describe('WinChecker', function() {
 

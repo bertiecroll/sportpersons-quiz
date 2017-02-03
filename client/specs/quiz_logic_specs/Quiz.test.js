@@ -1,7 +1,7 @@
-import Quiz from '../src/quiz_logic/Quiz'
-import Collection from '../src/quiz_logic/Collection'
-import WinChecker from '../src/quiz_logic/WinChecker'
-import Tracker from '../src/quiz_logic/Tracker'
+import Quiz from '../../src/quiz_logic/Quiz'
+import Collection from '../../src/quiz_logic/Collection'
+import WinChecker from '../../src/quiz_logic/WinChecker'
+import Tracker from '../../src/quiz_logic/Tracker'
 
 describe('Quiz', function() {
 
