@@ -1,11 +1,11 @@
 class WinChecker {
 
-  getWinner(key, array) {
-    return array.reduce(function(currentWinner, nextItem) {
-      return (currentWinner[key] > nextItem[key]) ?
-        currentWinner :
-        nextItem
-    })
+  getTopCard(key, array) {
+    return array.reduce(function(winningIndex, currentItem, currentIndex) {
+      return (array[winningIndex][key] > currentItem[key]) ?
+        winningIndex :
+        currentIndex
+    }, 0)
   }
 }
 

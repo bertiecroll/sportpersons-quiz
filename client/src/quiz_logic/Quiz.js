@@ -1,15 +1,34 @@
 class Quiz {
-  constructor({collection, user}) {
+  constructor({collection, winChecker, user, compareBy}) {
     this.collection = collection
+    this.winChecker = winChecker
     this.user = user
+    this.compareBy = compareBy
     this.round = 1 
     this.cardsOnShow = []
+    this.scoreCard = []
   }
 
-  displayCards() {
+  showCards() {
     const numberOfCards = this.round + 1
     this.cardsOnShow = this.collection.getCards(numberOfCards)
   }
+
+  playRound(guessIndex) {
+    const winningIndex = this.getWinningIndex()
+    const result = (guessIndex === winningIndex)
+    this.scoreCard.push(result)
+  }
+
+  clearCardsOnShow() {
+    this.cardsOnShow = []
+  }
+
+  getWinningIndex() {
+    this.winChecker.getTopCard(this.compareBy, this.cardsOnShow)
+  }
+
+
 
 }
 
