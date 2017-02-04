@@ -9,7 +9,7 @@ class Board extends React.Component {
   render() {
     return (
       <div className="quiz-board">
-        <Display cardsOnShow={this.props.quiz.cardsOnShow}/>
+        <Display cardsOnShow={this.props.cardsOnShow}/>
       </div>
     )
   }

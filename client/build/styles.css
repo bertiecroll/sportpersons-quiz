@@ -18,6 +18,13 @@
   box-shadow: 5px 5px 20px #555;
   text-align: center;
   font-size: 1.5rem;
+  transition: .5s transform, .5s box-shadow;
+}
+
+.card:hover {
+  cursor: pointer;
+  transform: scale(1.05);
+  box-shadow: 10px 10px 30px #555;
 }
 
 .card img {

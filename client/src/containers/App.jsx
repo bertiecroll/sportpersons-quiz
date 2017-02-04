@@ -10,8 +10,9 @@ class App extends React.Component {
   constructor(props) {
     super(props)
     this.state = {
-      quiz: null
+      cardsOnShow: []
     }
+    this.quiz = null
     this.apiResponseAction = this.apiResponseAction.bind(this)
   }
 
@@ -23,24 +24,24 @@ class App extends React.Component {
   }
 
   render() {
-    return (this.state.quiz) ?
-      <Board quiz={this.state.quiz} /> :
+    return (this.quiz) ?
+      <Board cardsOnShow={this.state.cardsOnShow} /> :
       <div className="app-container">Loading...</div> 
+  }
+
+  playRound(index) {
+
   }
 
   apiResponseAction(event) {
     const jsonString = event.target.responseText
     const data = JSON.parse(jsonString)
-    const quiz = new Quiz({
+    this.quiz = new Quiz({
       collection: new Collection(data.sportspeople),
       winChecker: new WinChecker(),
       tracker: new Tracker({totalRounds: 4}),
       user: {name: "Player 1"},
       compareBy: 'points'
-    })
-    quiz.showCards()
-    this.setState({
-      quiz: quiz
     })
   }
 }
