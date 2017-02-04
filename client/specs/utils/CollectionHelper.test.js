@@ -24,4 +24,9 @@ describe('Collection Helper', function() {
     expect(actual).toEqual(expected)
   })
 
+  it('should be able to find index of top item in array', function() {
+    const actual = CollectionHelper.findTopItemIndex('points', sampleDataSet)
+    expect(actual).toEqual(1)
+  })
+
 })

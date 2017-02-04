@@ -5,6 +5,14 @@ class CollectionHelper {
     return shuffledArray.slice(0, amount)
   }
 
+  static findTopItemIndex(key, array) {
+    return array.reduce(function(winningIndex, currentItem, currentIndex) {
+      return (array[winningIndex][key] > currentItem[key]) ?
+        winningIndex :
+        currentIndex
+    }, 0)
+  }
+
   static _shuffleArray(array) {
     const shuffledArray = array
     const length = array.length
