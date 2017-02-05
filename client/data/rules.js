@@ -1,0 +1,1 @@
+export const rules = "KnockOut Quiz Guessing Game. Select number of rounds, each round number of players increases. Select player who you believe has highest points. Make it to the end to win, get one wrong and your out!"

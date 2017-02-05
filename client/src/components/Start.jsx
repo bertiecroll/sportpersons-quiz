@@ -2,6 +2,7 @@ import React from 'react'
 
 import RoundsToggle from './RoundsToggle'
 import ErrorBox from './ErrorBox'
+import RulesBox from './RulesBox'
 
 class Start extends React.Component {
   constructor(props) {
@@ -19,13 +20,14 @@ class Start extends React.Component {
   render() {
     return (
       <div className="start-component">
-        <h2>Welcome</h2>
+        <h1>Sportpersons Quiz</h1>
         <input type="text" onChange={this.updateUserName} />
         <RoundsToggle 
           updateTotalRounds={this.updateTotalRounds}
           totalRounds={this.state.totalRounds}
         />
         <button onClick={this.handleButtonClick}>Start Game</button>
+        <RulesBox />
         <ErrorBox
           show={this.state.displayError}
           message="Please enter name"
