@@ -16,6 +16,7 @@ class End extends React.Component {
     <div>
       <h1>Congratulations <strong>{user}!</strong></h1>
       <h1>You Win!</h1>
+      <div className="champion-image" />
     </div> :
     <div>
       <h2>Better luck next time {user}</h2>

@@ -105,8 +105,6 @@
   border-color: #1493FF;
 }
 
-
-
 /****** TEXT STYLES *****/
 
 .message-box {
@@ -155,6 +153,19 @@ h3 strong {
   width: 50%;
   bottom: 2rem;
   left: 25%;
+}
+
+/****** IMAGE STYLES *****/
+
+.champion-image {
+  width: 400px;
+  height: 300px;
+  background: linear-gradient(
+      rgba(29, 54, 94, 0.3), 
+      rgba(29, 54, 94, 1)
+    ), no-repeat center url("/images/champion.jpg");
+  background-size: 400px;
+  border-radius: 400px;
 }
 
 /****** CARD STYLES *****/
