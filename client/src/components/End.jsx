@@ -13,11 +13,14 @@ class End extends React.Component {
     const sampleQuote = CollectionHelper.sample(quotes, 1)[0]
 
     const content = result ?
-    <div><h4>Congratulations {user}! You Win!</h4></div> :
     <div>
-      <h4>Better luck next time {user}</h4>
-      <p>'{sampleQuote.quote}'</p>
-      <h5>-{sampleQuote.author}</h5>
+      <h1>Congratulations <strong>{user}!</strong></h1>
+      <h1>You Win!</h1>
+    </div> :
+    <div>
+      <h2>Better luck next time {user}</h2>
+      <h3><strong>'{sampleQuote.quote}'</strong></h3>
+      <h4>-{sampleQuote.author}</h4>
     </div>
 
     return (
