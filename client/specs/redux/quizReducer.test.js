@@ -20,12 +20,41 @@ describe('Quiz Reducer', function() {
     ]
     const action = {
       type: QuizActionTypes.SET_QUIZ_DATA,
-      dataSet: dataSet
+      dataSet
     }
     const expected = {
       quiz_data: dataSet,
       user: "",
       scoreCard: [],
+      currentRound: 1,
+      result: null  
+    }
+    expect(quizReducer(undefined, action)).toEqual(expected)
+  })
+  it('should handle SET_USER', function() {
+    const user = "Joe Black"
+    const action = {
+      type: QuizActionTypes.SET_USER,
+      user
+    }
+    const expected = {
+      quiz_data: [],
+      user: "Joe Black",
+      scoreCard: [],
+      currentRound: 1,
+      result: null  
+    }
+    expect(quizReducer(undefined, action)).toEqual(expected)
+  })
+  it('should handle UPDATE_SCORE_CARD', function() {
+    const action = {
+      type: QuizActionTypes.UPDATE_SCORE_CARD,
+      score: true
+    }
+    const expected = {
+      quiz_data: [],
+      user: "",
+      scoreCard: [true],
       currentRound: 1,
       result: null  
     }

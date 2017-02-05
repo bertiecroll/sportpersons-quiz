@@ -24,14 +24,6 @@ describe('QuizActions', function() {
     expect(QuizActions.setUser(user)).toEqual(expectedAction)
   })
 
-  it('should create action to update cards on show', function() {
-    const expectedAction = {
-      type: QuizActionTypes.UPDATE_CARDS_ON_SHOW,
-      amount: 2
-    }
-    expect(QuizActions.updateCardsOnShow(2)).toEqual(expectedAction)
-  })
-
   it('should create action to update score card', function() {
     const expectedAction = {
       type: QuizActionTypes.UPDATE_SCORE_CARD,

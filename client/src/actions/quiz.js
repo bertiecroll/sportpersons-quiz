@@ -14,13 +14,6 @@ export const setUser = function(user) {
   }
 }
 
-export const updateCardsOnShow = function(amount) {
-  return {
-    type: QuizActionTypes.UPDATE_CARDS_ON_SHOW,
-    amount
-  }
-}
-
 export const updateScoreCard = function(score) {
   return {
     type: QuizActionTypes.UPDATE_SCORE_CARD,

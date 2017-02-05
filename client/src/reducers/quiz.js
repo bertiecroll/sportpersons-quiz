@@ -18,6 +18,10 @@ const Quiz = function(state=initialState, action) {
       return Object.assign({}, state, {
         user: action.user
       })
+    case QuizActionTypes.UPDATE_SCORE_CARD:
+      return Object.assign({}, state, {
+        scoreCard: state.scoreCard.concat([action.score])
+      })
     default:
       return state
   }
