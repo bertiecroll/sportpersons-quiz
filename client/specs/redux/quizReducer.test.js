@@ -6,12 +6,12 @@ describe('Quiz Reducer', function() {
     const expected = {
       quiz_data: [],
       user: "",
-      scoreCard: [],
-      currentRound: 1,
-      result: null
+      totalRounds: null,
+      scoreCard: []
     }
     expect(quizReducer(undefined, {})).toEqual(expected)
   })
+
   it('should handle SET_QUIZ_DATA', function() {
     const dataSet = [
       {name: "John Smith", points: 10},
@@ -25,12 +25,12 @@ describe('Quiz Reducer', function() {
     const expected = {
       quiz_data: dataSet,
       user: "",
-      scoreCard: [],
-      currentRound: 1,
-      result: null  
+      totalRounds: null,
+      scoreCard: [] 
     }
     expect(quizReducer(undefined, action)).toEqual(expected)
   })
+
   it('should handle SET_USER', function() {
     const user = "Joe Black"
     const action = {
@@ -40,12 +40,26 @@ describe('Quiz Reducer', function() {
     const expected = {
       quiz_data: [],
       user: "Joe Black",
-      scoreCard: [],
-      currentRound: 1,
-      result: null  
+      totalRounds: null,
+      scoreCard: []
     }
     expect(quizReducer(undefined, action)).toEqual(expected)
   })
+
+  it('should handle SET_TOTAL_ROUNDS', function() {
+    const action = {
+      type: QuizActionTypes.SET_TOTAL_ROUNDS,
+      totalRounds: 3
+    }
+    const expected = {
+      quiz_data: [],
+      user: "",
+      totalRounds: 3,
+      scoreCard: []
+    }
+    expect(quizReducer(undefined, action)).toEqual(expected)
+  })
+
   it('should handle UPDATE_SCORE_CARD', function() {
     const action = {
       type: QuizActionTypes.UPDATE_SCORE_CARD,
@@ -54,9 +68,8 @@ describe('Quiz Reducer', function() {
     const expected = {
       quiz_data: [],
       user: "",
-      scoreCard: [true],
-      currentRound: 1,
-      result: null  
+      totalRounds: null,
+      scoreCard: [true]
     }
     expect(quizReducer(undefined, action)).toEqual(expected)
   })

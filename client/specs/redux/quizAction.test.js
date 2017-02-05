@@ -24,6 +24,14 @@ describe('QuizActions', function() {
     expect(QuizActions.setUser(user)).toEqual(expectedAction)
   })
 
+  it('should create action to set total rounds', function() {
+    const expectedAction = {
+      type: QuizActionTypes.SET_TOTAL_ROUNDS,
+      totalRounds: 3
+    }
+    expect(QuizActions.setTotalRounds(3)).toEqual(expectedAction)
+  })
+
   it('should create action to update score card', function() {
     const expectedAction = {
       type: QuizActionTypes.UPDATE_SCORE_CARD,

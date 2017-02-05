@@ -14,6 +14,13 @@ export const setUser = function(user) {
   }
 }
 
+export const setTotalRounds = function(totalRounds) {
+  return {
+    type: QuizActionTypes.SET_TOTAL_ROUNDS,
+    totalRounds
+  }
+}
+
 export const updateScoreCard = function(score) {
   return {
     type: QuizActionTypes.UPDATE_SCORE_CARD,

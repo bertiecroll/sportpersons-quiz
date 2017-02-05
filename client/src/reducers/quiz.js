@@ -3,9 +3,8 @@ import * as QuizActionTypes from '../actiontypes/quiz'
 const initialState = {
   quiz_data: [],
   user: "",
-  scoreCard: [],
-  currentRound: 1,
-  result: null
+  totalRounds: null,
+  scoreCard: []
 }
 
 const Quiz = function(state=initialState, action) {
@@ -18,9 +17,13 @@ const Quiz = function(state=initialState, action) {
       return Object.assign({}, state, {
         user: action.user
       })
+    case QuizActionTypes.SET_TOTAL_ROUNDS:
+      return Object.assign({}, state, {
+        totalRounds: action.totalRounds
+      })
     case QuizActionTypes.UPDATE_SCORE_CARD:
       return Object.assign({}, state, {
-        scoreCard: state.scoreCard.concat([action.score])
+        scoreCard: state.scoreCard.concat([action.score]),
       })
     default:
       return state
