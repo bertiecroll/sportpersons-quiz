@@ -1,17 +1,19 @@
 import React from 'react'
 
 import RoundsToggle from './RoundsToggle'
+import ErrorBox from './ErrorBox'
 
 class Start extends React.Component {
   constructor(props) {
     super()
     this.state = {
       userName: "",
-      totalRounds: 3
+      totalRounds: 3,
+      displayError: false
     }
     this.updateUserName = this.updateUserName.bind(this)
     this.updateTotalRounds = this.updateTotalRounds.bind(this)
-    this.handleOnClick = this.handleOnClick.bind(this)
+    this.handleButtonClick = this.handleButtonClick.bind(this)
   }
 
   render() {
@@ -23,14 +25,19 @@ class Start extends React.Component {
           updateTotalRounds={this.updateTotalRounds}
           totalRounds={this.state.totalRounds}
         />
-        <button onClick={this.handleOnClick}>Start Game</button>
+        <button onClick={this.handleButtonClick}>Start Game</button>
+        <ErrorBox
+          show={this.state.displayError}
+          message="Please enter name"
+        />
       </div>
     )
   }
 
   updateUserName(event) {
     this.setState({
-      userName: event.target.value
+      userName: event.target.value,
+      displayError: false
     })
   }
 
@@ -42,9 +49,15 @@ class Start extends React.Component {
     })
   }
 
-  handleOnClick() {
+  handleButtonClick() {
     const {userName, totalRounds} = this.state
-    this.props.setUserPrefs(userName, totalRounds)
+    if (userName) {
+      this.props.setUserPrefs(userName, totalRounds)
+    } else {
+      this.setState({
+        displayError: true
+      })
+    }
   }
 }
 
