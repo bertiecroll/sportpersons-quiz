@@ -14,8 +14,14 @@ const Quiz = function(state=initialState, action) {
       return Object.assign({}, state, {
         quiz_data: action.dataSet
       })
+    case QuizActionTypes.SET_USER:
+      return Object.assign({}, state, {
+        user: action.user
+      })
     default:
       return state
   }
   
 }
+
+export default Quiz
