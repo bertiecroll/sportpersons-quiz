@@ -8,7 +8,7 @@ class Quiz extends React.Component {
   }
 
   render() {
-    const {user, updateScoreCard, cardsOnShow, result} = this.props
+    const {user, updateScoreCard, resetQuiz, cardsOnShow, result} = this.props
 
     const content = (result === null) ?
       <Display
@@ -16,7 +16,7 @@ class Quiz extends React.Component {
         cardsOnShow={cardsOnShow}
         user={user}
       /> :
-      <End result={result} user={user}/>
+      <End result={result} user={user} resetQuiz={resetQuiz}/>
     return (
       <div className="quiz-component">
         {content}
