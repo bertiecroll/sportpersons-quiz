@@ -1,18 +1,12 @@
 import React from 'react'
 import Board from '../components/Board'
 import Quiz from '../quiz_logic/Quiz'
-import Collection from '../quiz_logic/Collection'
-import Tracker from '../quiz_logic/Tracker'
-import WinChecker from '../quiz_logic/WinChecker'
+import CollectionHelper from '../utils/CollectionHelper'
 
 
 class App extends React.Component {
   constructor(props) {
     super(props)
-    this.state = {
-      cardsOnShow: []
-    }
-    this.quiz = null
     this.apiResponseAction = this.apiResponseAction.bind(this)
   }
 
@@ -39,6 +33,14 @@ class App extends React.Component {
       user: {name: "Player 1"},
       compareBy: 'points'
     })
+  }
+}
+
+const mapStateToProps = function(state) {
+  const amountOfCards = state.scoreCard.length + 2
+  return {
+    user: state.user
+    cardsOnShow: CollectionHelper.sample(state.quiz_data, amountOfCards) 
   }
 }
 
