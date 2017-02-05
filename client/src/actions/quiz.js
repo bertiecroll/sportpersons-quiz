@@ -7,16 +7,10 @@ export const setQuizData = function(dataSet) {
   }
 }
 
-export const setUser = function(user) {
+export const setUserPrefs = function(user, totalRounds) {
   return {
-    type: QuizActionTypes.SET_USER,
-    user
-  }
-}
-
-export const setTotalRounds = function(totalRounds) {
-  return {
-    type: QuizActionTypes.SET_TOTAL_ROUNDS,
+    type: QuizActionTypes.SET_USER_PREFS,
+    user,
     totalRounds
   }
 }

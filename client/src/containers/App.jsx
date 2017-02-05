@@ -1,4 +1,5 @@
 import React from 'react'
+import { bindActionCreators } from 'redux'
 import { connect } from 'react-redux'
 import * as QuizActions from '../actions/quiz'
 
@@ -23,9 +24,12 @@ class App extends React.Component {
   }
 
   render() {
-    return (this.props.user) ?
-      <Quiz cardsOnShow={this.props.cardsOnShow} /> :
-      <Start /> 
+    const {user, cardsOnShow, dispatch} = this.props
+    const setUserPrefs = bindActionCreators(QuizActions.setUserPrefs, dispatch)
+
+    return (user) ?
+      <Quiz cardsOnShow={cardsOnShow} user={user} /> :
+      <Start setUserPrefs={setUserPrefs}/> 
   }
 
   apiResponseAction(event) {

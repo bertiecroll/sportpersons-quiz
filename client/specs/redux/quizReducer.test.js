@@ -34,26 +34,13 @@ describe('Quiz Reducer', function() {
   it('should handle SET_USER', function() {
     const user = "Joe Black"
     const action = {
-      type: QuizActionTypes.SET_USER,
-      user
-    }
-    const expected = {
-      quiz_data: [],
-      user: "Joe Black",
-      totalRounds: null,
-      scoreCard: []
-    }
-    expect(quizReducer(undefined, action)).toEqual(expected)
-  })
-
-  it('should handle SET_TOTAL_ROUNDS', function() {
-    const action = {
-      type: QuizActionTypes.SET_TOTAL_ROUNDS,
+      type: QuizActionTypes.SET_USER_PREFS,
+      user,
       totalRounds: 3
     }
     const expected = {
       quiz_data: [],
-      user: "",
+      user: "Joe Black",
       totalRounds: 3,
       scoreCard: []
     }

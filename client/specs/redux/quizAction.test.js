@@ -15,21 +15,14 @@ describe('QuizActions', function() {
     expect(QuizActions.setQuizData(dataSet)).toEqual(expectedAction)
   })
 
-  it('should create action to set user', function() {
+  it('should create action to set user prefs', function() {
     const user = "Joe Black"
     const expectedAction = {
-      type: QuizActionTypes.SET_USER,
-      user
-    }
-    expect(QuizActions.setUser(user)).toEqual(expectedAction)
-  })
-
-  it('should create action to set total rounds', function() {
-    const expectedAction = {
-      type: QuizActionTypes.SET_TOTAL_ROUNDS,
+      type: QuizActionTypes.SET_USER_PREFS,
+      user,
       totalRounds: 3
     }
-    expect(QuizActions.setTotalRounds(3)).toEqual(expectedAction)
+    expect(QuizActions.setUserPrefs(user, 3)).toEqual(expectedAction)
   })
 
   it('should create action to update score card', function() {

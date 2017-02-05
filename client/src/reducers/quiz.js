@@ -13,12 +13,9 @@ const Quiz = function(state=initialState, action) {
       return Object.assign({}, state, {
         quiz_data: action.dataSet
       })
-    case QuizActionTypes.SET_USER:
+    case QuizActionTypes.SET_USER_PREFS:
       return Object.assign({}, state, {
-        user: action.user
-      })
-    case QuizActionTypes.SET_TOTAL_ROUNDS:
-      return Object.assign({}, state, {
+        user: action.user,
         totalRounds: action.totalRounds
       })
     case QuizActionTypes.UPDATE_SCORE_CARD:
