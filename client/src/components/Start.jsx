@@ -1,22 +1,28 @@
 import React from 'react'
 
+import RoundsToggle from './RoundsToggle'
+
 class Start extends React.Component {
   constructor(props) {
-    super(props)
+    super()
     this.state = {
       userName: "",
       totalRounds: 3
     }
     this.updateUserName = this.updateUserName.bind(this)
+    this.updateTotalRounds = this.updateTotalRounds.bind(this)
     this.handleOnClick = this.handleOnClick.bind(this)
   }
 
   render() {
-
     return (
       <div className="start-component">
         <h2>Welcome</h2>
         <input type="text" onChange={this.updateUserName} />
+        <RoundsToggle 
+          updateTotalRounds={this.updateTotalRounds}
+          totalRounds={this.state.totalRounds}
+        />
         <button onClick={this.handleOnClick}>Start Game</button>
       </div>
     )
@@ -28,9 +34,11 @@ class Start extends React.Component {
     })
   }
 
-  updateTotalRounds(rounds) {
+  updateTotalRounds(value) {
+    const newTotal = this.state.totalRounds + value
+    if (newTotal > 0 && newTotal < 6)
     this.setState({
-      totalRounds: rounds 
+      totalRounds: newTotal 
     })
   }
 

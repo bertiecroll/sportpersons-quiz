@@ -12,7 +12,7 @@ import Start from '../components/Start'
 
 class App extends React.Component {
   constructor(props) {
-    super(props)
+    super()
     this.apiResponseAction = this.apiResponseAction.bind(this)
   }
 
