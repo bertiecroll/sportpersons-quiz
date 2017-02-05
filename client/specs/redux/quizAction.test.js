@@ -32,4 +32,11 @@ describe('QuizActions', function() {
     }
     expect(QuizActions.updateScoreCard(true)).toEqual(expectedAction)
   })
+
+  it('should create action to reset quiz', function() {
+    const expectedAction = {
+      type: QuizActionTypes.RESET_QUIZ
+    }
+    expect(QuizActions.resetQuiz()).toEqual(expectedAction)
+  })
 })

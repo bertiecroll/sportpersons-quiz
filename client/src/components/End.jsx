@@ -1,16 +1,29 @@
 import React from 'react'
 
-const End = function({result, user}) {
+class End extends React.Component {
+  constructor(props) {
+    super(props)
+    this.handleButtonClick = this.handleButtonClick.bind(this)
+  }
 
-  const content = result ?
-  <h4>Congratulations {user}! You Win!</h4> :
-  <h4>Better luck next time {user}</h4>
+  render() {
+    const {user, result} = this.props
 
-  return (
-    <div className="end-component">
-      {content}
-    </div>
-  )
+    const content = result ?
+    <h4>Congratulations {user}! You Win!</h4> :
+    <h4>Better luck next time {user}</h4>
+
+    return (
+      <div className="end-component">
+        {content}
+        <button onClick={this.handleButtonClick}>Try Again</button>
+      </div>
+    )
+  }
+
+  handleButtonClick() {
+
+  }
 }
 
 export default End

@@ -21,3 +21,9 @@ export const updateScoreCard = function(score) {
     score
   }
 }
+
+export const resetQuiz = function() {
+  return {
+    type: QuizActionTypes.RESET_QUIZ
+  }
+}

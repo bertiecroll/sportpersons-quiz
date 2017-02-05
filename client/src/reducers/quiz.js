@@ -22,6 +22,10 @@ const Quiz = function(state=initialState, action) {
       return Object.assign({}, state, {
         scoreCard: state.scoreCard.concat([action.score]),
       })
+    case QuizActionTypes.RESET_QUIZ:
+      return Object.assign({}, state, {
+        scoreCard: []
+      })
     default:
       return state
   }

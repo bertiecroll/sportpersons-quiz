@@ -60,4 +60,23 @@ describe('Quiz Reducer', function() {
     }
     expect(quizReducer(undefined, action)).toEqual(expected)
   })
+
+  it('should handle RESET_QUIZ', function() {
+    const state = {
+      quiz_data: [],
+      user: "",
+      totalRounds: null,
+      scoreCard: [true,true,false]
+    }
+    const action = {
+      type: QuizActionTypes.RESET_QUIZ
+    }
+    const expected = {
+      quiz_data: [],
+      user: "",
+      totalRounds: null,
+      scoreCard: []
+    }
+    expect(quizReducer(state, action)).toEqual(expected)
+  })
 })
