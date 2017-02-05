@@ -29,10 +29,6 @@ class App extends React.Component {
       <div className="app-container">Loading...</div> 
   }
 
-  playRound(index) {
-
-  }
-
   apiResponseAction(event) {
     const jsonString = event.target.responseText
     const data = JSON.parse(jsonString)
