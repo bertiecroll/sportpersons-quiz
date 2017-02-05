@@ -1,5 +1,6 @@
 import React from 'react'
 import Display from './Display'
+import End from './End'
 
 class Quiz extends React.Component {
   constructor(props) {
@@ -15,7 +16,7 @@ class Quiz extends React.Component {
         cardsOnShow={cardsOnShow}
         user={user}
       /> :
-      <div>Game Over</div>
+      <End result={result} user={user}/>
     return (
       <div className="quiz-component">
         {content}
