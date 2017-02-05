@@ -1,5 +1,6 @@
 import React from 'react'
 import Card from './Card'
+import MessageBox from './MessageBox'
 
 import CollectionHelper from '../utils/CollectionHelper'
 
@@ -7,7 +8,8 @@ class Display extends React.Component {
   constructor(props) {
     super()
     this.state = {
-      topIndex: null
+      topIndex: null,
+      chosenIndex: null
     }
     this.handleCardClick = this.handleCardClick.bind(this)
   }
@@ -17,37 +19,45 @@ class Display extends React.Component {
   }
 
   render() {
-    const cards = this.props.cardsOnShow.map((card, index) => {
+    const { topIndex, chosenIndex } = this.state
+    const { cardsOnShow, user } = this.props
+
+    const round = cardsOnShow.length - 1
+    const cards = cardsOnShow.map((card, index) => {
       return <Card
-        styleName={(this.state.topIndex !== null) ? "card-no-click" : "card-click"}
-        handleClick={(this.state.topIndex !== null) ? null : this.handleCardClick}
+        styleName={(chosenIndex !== null) ? "card-no-click" : "card-click"}
+        handleClick={(chosenIndex !== null) ? null : this.handleCardClick}
         key={index}
         index={index}
-        topIndex={this.state.topIndex}
+        topIndex={topIndex}
         card={card}
         />
     })
-    const round = this.props.cardsOnShow.length - 1
-
+    
     return (
-      <div className="card-display">
-        <h2>Round: {round}</h2>
-        {cards}
+      <div className="quiz-display">
+        <MessageBox user={user} chosenCard={cardsOnShow[chosenIndex]} round={round}/>
+        <div className="card-display">
+          {cards}
+        </div>
       </div>
     )
   }
 
   handleCardClick(event) {
     const topIndex = CollectionHelper.findTopItemIndex('points', this.props.cardsOnShow)
-    this.setState({ topIndex: topIndex })
-    
     const chosenIndex = parseInt(event.target.getAttribute('value'))
-    const result = (topIndex === chosenIndex)
+    this.setState({ chosenIndex:  chosenIndex })
 
     setTimeout(() => {
-      this.setState({ topIndex: null })
+      this.setState({ topIndex: topIndex })  
+    }, 1000)
+
+    const result = (topIndex === chosenIndex)
+    setTimeout(() => {
+      this.setState({ topIndex: null, chosenIndex: null })
       this.props.updateScoreCard(result)
-    }, 1500)
+    }, 3000)
   }
 }
 
