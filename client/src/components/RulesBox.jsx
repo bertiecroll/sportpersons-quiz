@@ -12,7 +12,7 @@ class RulesBox extends React.Component {
 
   render() {
     const content = (this.state.displayRules) ?
-      <p>{rules}</p> :
+      <p className="rules-content">{rules}</p> :
       null
     return (
       <div className="rules-box">

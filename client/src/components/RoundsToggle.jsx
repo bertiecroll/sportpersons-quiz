@@ -10,7 +10,8 @@ class RoundsToggle extends React.Component {
   render() {
     return (
       <div className="rounds-toggle">
-        <h3>{this.props.totalRounds}</h3>
+        <h3>Select Number of Rounds: </h3>
+        <h2>{this.props.totalRounds}</h2>
         <button onClick={this.handleDecreaseClick} className="decrease-button">-</button>
         <button onClick={this.handleIncreaseClick} className="increase-button">+</button>
       </div>

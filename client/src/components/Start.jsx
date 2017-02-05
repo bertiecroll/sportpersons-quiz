@@ -21,17 +21,21 @@ class Start extends React.Component {
     return (
       <div className="start-component">
         <h1>Sportpersons Quiz</h1>
-        <input type="text" onChange={this.updateUserName} />
+        <ErrorBox
+          show={this.state.displayError}
+          message="*please enter name*"
+        />
+        <h3>What is your name?</h3>
+        <input type="text" placeholder="Enter Name" onChange={this.updateUserName} />
+        
         <RoundsToggle 
           updateTotalRounds={this.updateTotalRounds}
           totalRounds={this.state.totalRounds}
         />
-        <button onClick={this.handleButtonClick}>Start Game</button>
-        <RulesBox />
-        <ErrorBox
-          show={this.state.displayError}
-          message="Please enter name"
-        />
+        <div className="start-buttons">
+          <button onClick={this.handleButtonClick}>Start Game</button>
+          <RulesBox />
+        </div>
       </div>
     )
   }
