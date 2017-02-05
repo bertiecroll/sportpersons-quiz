@@ -24,11 +24,17 @@ class App extends React.Component {
   }
 
   render() {
-    const {user, cardsOnShow, dispatch} = this.props
+    const {user, cardsOnShow, result, dispatch} = this.props
     const setUserPrefs = bindActionCreators(QuizActions.setUserPrefs, dispatch)
+    const updateScoreCard = bindActionCreators(QuizActions.updateScoreCard, dispatch)
 
     return (user) ?
-      <Quiz cardsOnShow={cardsOnShow} user={user} /> :
+      <Quiz
+        updateScoreCard={updateScoreCard}
+        cardsOnShow={cardsOnShow}
+        user={user}
+        result={result}
+      /> :
       <Start setUserPrefs={setUserPrefs}/> 
   }
 

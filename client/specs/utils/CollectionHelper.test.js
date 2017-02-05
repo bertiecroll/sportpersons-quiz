@@ -6,9 +6,9 @@ describe('Collection Helper', function() {
 
   beforeEach(function() {
     sampleDataSet = [
-      {name: "John Smith", points: 10},
-      {name: "Mary Brown", points: 20},
-      {name: "Toby McDonald", points: 5}
+      {name: "John Smith", points: 10.55},
+      {name: "Mary Brown", points: 20.98},
+      {name: "Toby McDonald", points: 20.45}
     ]
   })
 
