@@ -3,15 +3,13 @@ import path from 'path'
 
 const app = express()
 
+app.set('port', (process.env.PORT || 5000))
+app.use(express.static('client/build'))
+
 app.get('/', function(req, res) {
   res.sendFile(path.join(`${__dirname}/client/build/index.html`))
 })
 
-app.use(express.static('client/build'))
-
-const server = app.listen(5000, function() {
-  const host = server.address().address
-  const port = server.address().port
-
-  console.log("Sportpersons Quiz app listening at http://%s:%s", host, port)
+app.listen(app.get('port'), function() {
+  console.log('Node app is running on port', app.get('port'))
 })
