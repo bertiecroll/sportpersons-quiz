@@ -8,5 +8,9 @@
     "test": "jest /specs"
   },
   "author": "",
-  "license": "ISC"
+  "license": "ISC",
+  "devDependencies": {
+    "babel-jest": "^18.0.0",
+    "jest": "^18.1.0"
+  }
 }

@@ -20,9 +20,5 @@
     "react-redux": "^5.0.2",
     "redux": "^3.6.0",
     "webpack": "^1.12.12"
-  },
-  "devDependencies": {
-    "babel-jest": "^18.0.0",
-    "jest": "^18.1.0"
   }
 }
