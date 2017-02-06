@@ -37,7 +37,7 @@ body {
 
 .error-message {
   position: absolute;
-  top: 20%;
+  top: 17%;
   left: 25%;
   width: 50%;
   color: #E53030;
@@ -157,7 +157,7 @@ h3 strong {
   position: absolute;
   letter-spacing: .2rem;
   width: 50%;
-  bottom: 2rem;
+  bottom: 5rem;
   left: 25%;
 }
 
