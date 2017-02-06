@@ -1,5 +1,7 @@
 # sportpersons-quiz
-Javascript web application quiz using React and Redux
+Single page web application quiz written in Javascript using React and Redux.
+Quiz rules: guess player with highest points, win and move on to the next round. Lose and you are out. 
+
 ### Application hosted at https://sportpersons-quiz.herokuapp.com/
 
 
@@ -15,5 +17,8 @@ Javascript web application quiz using React and Redux
 5. Application will run on localhost:5000.
 
 ### Run Dev Tests
-1. Install dev dependancies using `npm install` from `/client` folder.
-2. Run tests using `npm test` from same folder.
+* Tests carried out using Jest testing framework
+
+1. Follow step 2. above to install dependancies.
+2. Install dev dependancies using `npm install` from `/client` folder.
+3. Run tests using `npm test` from same folder.
