@@ -15,4 +15,5 @@ Javascript web application quiz using React and Redux
 5. Application will run on localhost:5000.
 
 ### Run Dev Tests
-1. Run tests using `npm test` from `/client` folder.
+1. Install dev dependancies using `npm install` from `/client` folder.
+2. Run tests using `npm test` from same folder.
