@@ -20,7 +20,7 @@ class Display extends React.Component {
 
   render() {
     const { topIndex, chosenIndex } = this.state
-    const { cardsOnShow, user } = this.props
+    const { cardsOnShow, user, totalRounds } = this.props
 
     const round = cardsOnShow.length - 1
     const cards = cardsOnShow.map((card, index) => {
@@ -36,7 +36,12 @@ class Display extends React.Component {
     
     return (
       <div className="quiz-display">
-        <MessageBox user={user} chosenCard={cardsOnShow[chosenIndex]} round={round}/>
+        <MessageBox
+          user={user}
+          totalRounds={totalRounds}
+          chosenCard={cardsOnShow[chosenIndex]}
+          round={round}
+        />
         <div className="card-display">
           {cards}
         </div>

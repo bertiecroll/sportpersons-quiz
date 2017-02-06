@@ -24,7 +24,7 @@ class App extends React.Component {
   }
 
   render() {
-    const {user, cardsOnShow, result, dispatch} = this.props
+    const {user, totalRounds, cardsOnShow, result, dispatch} = this.props
     const setUserPrefs = bindActionCreators(QuizActions.setUserPrefs, dispatch)
     const updateScoreCard = bindActionCreators(QuizActions.updateScoreCard, dispatch)
     const resetQuiz = bindActionCreators(QuizActions.resetQuiz, dispatch)
@@ -33,6 +33,7 @@ class App extends React.Component {
       <Quiz
         updateScoreCard={updateScoreCard}
         resetQuiz={resetQuiz}
+        totalRounds={totalRounds}
         cardsOnShow={cardsOnShow}
         user={user}
         result={result}
@@ -53,6 +54,7 @@ const mapStateToProps = function(state) {
   return {
     user: state.user,
     cardsOnShow: CollectionHelper.sample(state.quiz_data, amountOfCards),
+    totalRounds: state.totalRounds,
     result: ResultTracker.check(state.scoreCard, state.totalRounds)  
   }
 }

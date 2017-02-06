@@ -5,7 +5,7 @@ import CollectionHelper from '../utils/CollectionHelper'
 
 class End extends React.Component {
   constructor(props) {
-    super(props)
+    super()
   }
 
   render() {

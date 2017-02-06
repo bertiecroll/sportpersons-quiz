@@ -4,15 +4,16 @@ import End from './End'
 
 class Quiz extends React.Component {
   constructor(props) {
-    super(props)
+    super()
   }
 
   render() {
-    const {user, updateScoreCard, resetQuiz, cardsOnShow, result} = this.props
+    const {user, updateScoreCard, resetQuiz, totalRounds, cardsOnShow, result} = this.props
 
     const content = (result === null) ?
       <Display
         updateScoreCard={updateScoreCard}
+        totalRounds={totalRounds}
         cardsOnShow={cardsOnShow}
         user={user}
       /> :
