@@ -18,7 +18,7 @@ describe('Collection Helper', function() {
   })
 
   it('should not change dataSet when taking sample', function() {
-    const expected = sampleDataSet
+    const expected = sampleDataSet.slice()
     CollectionHelper.sample(sampleDataSet, 2)
     const actual = sampleDataSet
     expect(actual).toEqual(expected)

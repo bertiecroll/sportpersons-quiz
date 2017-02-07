@@ -14,7 +14,7 @@ class CollectionHelper {
   }
 
   static _shuffleArray(array) {
-    const shuffledArray = array
+    const shuffledArray = array.slice()
     const length = array.length
 
     for (let i = length -1; i > 0; i--) {
