@@ -1,8 +1,8 @@
+**PROJECT ARCHIVED**
+
 # sportpersons-quiz
 Single page web application quiz written in Javascript using React and Redux.  
 Quiz rules: guess player with highest points, win and move on to the next round. Lose and you are out. 
-
-### Application hosted at https://sportpersons-quiz.herokuapp.com/
 
 
 ## Installing and Running App Locally
